@@ -1,4 +1,4 @@
-package br.com.logicadeprogramacao.exercicios;
+package br.com.logicadeprogramacao.exercicios.exercicio8;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

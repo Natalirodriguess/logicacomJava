@@ -1,4 +1,4 @@
-package br.com.logicadeprogramacao.exercicios;
+package br.com.logicadeprogramacao.exercicios.exercicio5;
 
 import java.sql.SQLOutput;
 import java.util.Scanner;

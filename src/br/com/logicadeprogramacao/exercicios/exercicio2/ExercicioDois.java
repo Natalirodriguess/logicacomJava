@@ -1,4 +1,4 @@
-package br.com.logicadeprogramacao.exercicios;
+package br.com.logicadeprogramacao.exercicios.exercicio2;
 
 import java.util.Scanner;
 

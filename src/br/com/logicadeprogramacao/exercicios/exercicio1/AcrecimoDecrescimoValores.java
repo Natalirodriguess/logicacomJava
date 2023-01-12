@@ -1,10 +1,9 @@
-package br.com.logicadeprogramacao.exercicios;
+package br.com.logicadeprogramacao.exercicios.exercicio1;
 
 
 import java.util.Scanner;
-import java.util.Locale;
 
-public class ExercicioUm {
+public class AcrecimoDecrescimoValores {
 
     public static void main(String [] args){
 
