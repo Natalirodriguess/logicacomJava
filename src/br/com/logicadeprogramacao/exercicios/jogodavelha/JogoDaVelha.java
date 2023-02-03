@@ -10,7 +10,7 @@ public class JogoDaVelha {
 
             String[][] velha = new String[3][3];
             int jogadas = 0, posicao = 0;
-            String temporaria;
+            //String temporaria;
             int coluna, linha = 0;
             Scanner valor = new Scanner(System.in);
             String turno = "X";
