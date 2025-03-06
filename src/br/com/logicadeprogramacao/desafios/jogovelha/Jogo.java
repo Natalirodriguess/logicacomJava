@@ -100,6 +100,7 @@ public class Jogo {
                     posicaoDisponivel++;
                     if(escolhaDaPosicaoJogador1 == posicaoDisponivel && minhaMatrizNoTabuleiro[linha][coluna] != "X" ||
                             escolhaDaPosicaoJogador1 == posicaoDisponivel  && minhaMatrizNoTabuleiro[linha][coluna] != "O" ) {
+                        minhaMatrizNoTabuleiro [linha][coluna] = escolhaXouOJogador1.toUpperCase();
                         System.out.print(escolhaXouOJogador1 + "   | ");
                         minhaMatrizNoTabuleiro[linha][coluna] = escolhaXouOJogador1;
                     } else if (escolhaDaPosicaoJogador1 == posicaoDisponivel && minhaMatrizNoTabuleiro[linha][coluna] == escolhaXouOJogador1 ||
