@@ -99,15 +99,31 @@ public class Jogo {
                 System.out.print("                                                          |  ");
                 for(int coluna = 0; coluna <= 2; coluna++) {
                     posicaoDisponivel++;
-                    if(vez%2!=0 && escolhaDaPosicaoJogador1 == posicaoDisponivel){
-                        minhaMatrizNoTabuleiro [linha][coluna] = escolhaXouOJogador1.toUpperCase();
-                        System.out.print(minhaMatrizNoTabuleiro [linha][coluna] + "   | ");
-                    } else if (escolhaDaPosicaoJogador2 == posicaoDisponivel) {
-                        minhaMatrizNoTabuleiro [linha][coluna] = escolhaXouOJogador2.toUpperCase();
-                        System.out.print(minhaMatrizNoTabuleiro [linha][coluna] + "   | ");
-                    } else {
 
-                    }
+                    if ( minhaMatrizNoTabuleiro[linha][coluna] == "X") {
+                        System.out.print("[" + minhaMatrizNoTabuleiro[linha][coluna] + "]");
+                    } else if(vez%2!=0 && escolhaDaPosicaoJogador1 == posicaoDisponivel){
+                         minhaMatrizNoTabuleiro[linha][coluna] = escolhaXouOJogador1;
+                        System.out.print("(" + minhaMatrizNoTabuleiro[linha][coluna] + ")");
+                      }
+                      else if(vez%2==0 && escolhaDaPosicaoJogador2 == posicaoDisponivel){
+                        minhaMatrizNoTabuleiro[linha][coluna] = escolhaXouOJogador2;
+                        System.out.print("(" + minhaMatrizNoTabuleiro[linha][coluna] + ")");
+                      }
+                      else{
+                         System.out.print("[" + minhaMatrizNoTabuleiro[linha][coluna] + "]");
+                      }
+
+
+//                    if(vez%2!=0 && escolhaDaPosicaoJogador1 == posicaoDisponivel){
+//                        minhaMatrizNoTabuleiro [linha][coluna] = escolhaXouOJogador1.toUpperCase();
+//                        System.out.print(minhaMatrizNoTabuleiro [linha][coluna] + "   | ");
+//                    } else if (escolhaDaPosicaoJogador2 == posicaoDisponivel) {
+//                        minhaMatrizNoTabuleiro [linha][coluna] = escolhaXouOJogador2.toUpperCase();
+//                        System.out.print(minhaMatrizNoTabuleiro [linha][coluna] + "   | ");
+//                    } else {
+//
+//                    }
 
 //                    if(minhaMatrizNoTabuleiro[linha][coluna] == "X" || minhaMatrizNoTabuleiro[linha][coluna] == "O") {
 ////                        System.out.println("Essa posição já está preenchida. Por favor, selecione outra opção");
