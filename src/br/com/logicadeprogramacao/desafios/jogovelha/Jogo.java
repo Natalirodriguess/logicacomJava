@@ -32,16 +32,16 @@ public class Jogo {
 
     public static void escolhaXouO(){
         System.out.println("jogador " + jogador1 + " escolha [X] ou [O]");
-        escolhaXouOJogador1 = entradas.nextLine();
+        escolhaXouOJogador1 = entradas.nextLine().toUpperCase();
 
         if(escolhaXouOJogador1.equalsIgnoreCase("X")) {
-            System.out.println("jogador " +jogador1 + " você ficará com [" + escolhaXouOJogador1.toUpperCase()+ "]" );
+            System.out.println("jogador " +jogador1 + " você ficará com [" + escolhaXouOJogador1+ "]" );
             escolhaXouOJogador2 = "O";
-            System.out.println("jogador " + jogador2 + " você ficará com [" +escolhaXouOJogador2.toUpperCase()+"]");
+            System.out.println("jogador " + jogador2 + " você ficará com [" +escolhaXouOJogador2+"]");
         } else if (escolhaXouOJogador1.equalsIgnoreCase("O")) {
-            System.out.println("jogador " +jogador1 + " você ficará com [" + escolhaXouOJogador1.toUpperCase()+ "]" );
+            System.out.println("jogador " +jogador1 + " você ficará com [" + escolhaXouOJogador1+ "]" );
             escolhaXouOJogador2 = "X";
-            System.out.println("jogador " + jogador2 + " você ficará com [" +escolhaXouOJogador2.toUpperCase()+"]");
+            System.out.println("jogador " + jogador2 + " você ficará com [" +escolhaXouOJogador2+"]");
         }
         else {
             System.out.println("Opção inválida! Por favor informe uma das seguintes opções [X] ou [O]");
@@ -56,17 +56,16 @@ public class Jogo {
         int escolhaDaPosicaoJogador1 = 0;
         int escolhaDaPosicaoJogador2 = 0;
         boolean valido;
+        boolean venceu = false;
 
-        String escolhaGeral;
-
-        for(int posicaoNotabuleiro = 1; posicaoNotabuleiro <= 9; posicaoNotabuleiro++ ) {
+       while(!venceu) {
             valido = false;
             if(vez%2==0){
                 while(!valido){
-                    System.out.println("jogador " + jogador2 + " escolha uma posição válida de 1 a 9 para [" + escolhaXouOJogador2.toUpperCase() + "]");
+                    System.out.println("jogador " + jogador2 + " escolha uma posição válida de 1 a 9 para [" + escolhaXouOJogador2 + "]");
                     escolhaDaPosicaoJogador2 = entradas.nextInt();
 
-                    if((escolhaDaPosicaoJogador2 < 1 || escolhaDaPosicaoJogador2 > 9) || escolhaDaPosicaoJogador2 == escolhaDaPosicaoJogador1) {
+                    if((escolhaDaPosicaoJogador2 < 1 || escolhaDaPosicaoJogador2 > 9) || escolhaDaPosicaoJogador2 == escolhaDaPosicaoJogador1 ) {
                         System.out.println("Opção inválida! Por favor informe uma posição válida!");
                         valido = false;
                     } else{
@@ -76,7 +75,7 @@ public class Jogo {
 
             } else {
                 while(!valido){
-                    System.out.println("jogador " + jogador1 + " escolha uma posição válida de 1 a 9 para [" + escolhaXouOJogador1.toUpperCase() + "]");
+                    System.out.println("jogador " + jogador1 + " escolha uma posição válida de 1 a 9 para [" + escolhaXouOJogador1 + "]");
                     escolhaDaPosicaoJogador1 = entradas.nextInt();
 
                     if((escolhaDaPosicaoJogador1 <1 || escolhaDaPosicaoJogador1 > 9) || escolhaDaPosicaoJogador1 == escolhaDaPosicaoJogador2) {
@@ -89,7 +88,6 @@ public class Jogo {
 
             }
 
-
             Integer posicaoDisponivel= 0;
 
             System.out.println("                                                          ===================");
@@ -99,28 +97,51 @@ public class Jogo {
                 System.out.print("                                                          |  ");
                 for(int coluna = 0; coluna <= 2; coluna++) {
                     posicaoDisponivel++;
+                    if(minhaMatrizNoTabuleiro[0][0] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][0] == escolhaXouOJogador1 &&
+                            minhaMatrizNoTabuleiro[2][0]== escolhaXouOJogador1 ||minhaMatrizNoTabuleiro[0][0] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][0] == escolhaXouOJogador2 &&
+                            minhaMatrizNoTabuleiro[2][0]== escolhaXouOJogador2){
+                        venceu = true;
+                    } else if(minhaMatrizNoTabuleiro[0][1] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador1 &&
+                            minhaMatrizNoTabuleiro[2][1]== escolhaXouOJogador1 ||minhaMatrizNoTabuleiro[0][1] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador2 &&
+                            minhaMatrizNoTabuleiro[1][2]== escolhaXouOJogador2){
+                        venceu = true;
+                    } else if (minhaMatrizNoTabuleiro[0][2] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][2] == escolhaXouOJogador1 &&
+                            minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador1 ||minhaMatrizNoTabuleiro[0][2] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][2] == escolhaXouOJogador2 &&
+                            minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador2) {
+                        
+                    }
 
-                    if ( minhaMatrizNoTabuleiro[linha][coluna] == "X") {
-                        System.out.print("[" + minhaMatrizNoTabuleiro[linha][coluna] + "]");
-                    } else if(vez%2!=0 && escolhaDaPosicaoJogador1 == posicaoDisponivel){
+                    if (minhaMatrizNoTabuleiro[linha][coluna] == escolhaXouOJogador1 || minhaMatrizNoTabuleiro[linha][coluna] == escolhaXouOJogador2) {
+                        System.out.print("" + minhaMatrizNoTabuleiro[linha][coluna] + "   | ");
+                        }
+                        else if (vez%2!=0 && escolhaDaPosicaoJogador1 == posicaoDisponivel){
                          minhaMatrizNoTabuleiro[linha][coluna] = escolhaXouOJogador1;
-                        System.out.print("(" + minhaMatrizNoTabuleiro[linha][coluna] + ")");
-                      }
-                      else if(vez%2==0 && escolhaDaPosicaoJogador2 == posicaoDisponivel){
+                        System.out.print("" + minhaMatrizNoTabuleiro[linha][coluna] + "   | ");
+                        }
+                        else if(vez%2==0 && escolhaDaPosicaoJogador2 == posicaoDisponivel){
                         minhaMatrizNoTabuleiro[linha][coluna] = escolhaXouOJogador2;
-                        System.out.print("(" + minhaMatrizNoTabuleiro[linha][coluna] + ")");
-                      }
-                      else{
-                         System.out.print("[" + minhaMatrizNoTabuleiro[linha][coluna] + "]");
-                      }
+                        System.out.print("" + minhaMatrizNoTabuleiro[linha][coluna] + "   | ");
+                         }
+                        else{
+                          minhaMatrizNoTabuleiro[linha][coluna] = String.valueOf(posicaoDisponivel);
+                         System.out.print("" + minhaMatrizNoTabuleiro[linha][coluna] + "   | ");
+                        }
+
+
 
                 }
                 System.out.println("\n                                                          -------------------");
             }
             System.out.println("                                                          ===================");
-
+               if( venceu && vez%2!=0){
+                   System.out.print("O jogador " + jogador1 + " venceu !");
+               }else if (venceu && vez%2==0){
+                   System.out.print("O jogador " + jogador2 + " venceu !");
+               }
             vez++;
+
         }
+
 
     }
 }
