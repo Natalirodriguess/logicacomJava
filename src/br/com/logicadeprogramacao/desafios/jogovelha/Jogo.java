@@ -99,15 +99,15 @@ public class Jogo {
                     posicaoDisponivel++;
                     if(minhaMatrizNoTabuleiro[0][0] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][0] == escolhaXouOJogador1 &&
                             minhaMatrizNoTabuleiro[2][0]== escolhaXouOJogador1 ||minhaMatrizNoTabuleiro[0][0] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][0] == escolhaXouOJogador2 &&
-                            minhaMatrizNoTabuleiro[2][0]== escolhaXouOJogador2){
+                            minhaMatrizNoTabuleiro[2][0]== escolhaXouOJogador2){ //coluna um
                         venceu = true;
                     } else if(minhaMatrizNoTabuleiro[0][1] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador1 &&
                             minhaMatrizNoTabuleiro[2][1]== escolhaXouOJogador1 ||minhaMatrizNoTabuleiro[0][1] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador2 &&
-                            minhaMatrizNoTabuleiro[1][2]== escolhaXouOJogador2){
+                            minhaMatrizNoTabuleiro[1][2]== escolhaXouOJogador2){ //coluna dois
                         venceu = true;
                     } else if (minhaMatrizNoTabuleiro[0][2] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][2] == escolhaXouOJogador1 &&
                             minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador1 ||minhaMatrizNoTabuleiro[0][2] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][2] == escolhaXouOJogador2 &&
-                            minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador2) {
+                            minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador2) { //coluna três
                         
                     }
 
