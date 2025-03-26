@@ -108,7 +108,19 @@ public class Jogo {
                     } else if (minhaMatrizNoTabuleiro[0][2] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][2] == escolhaXouOJogador1 &&
                             minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador1 ||minhaMatrizNoTabuleiro[0][2] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][2] == escolhaXouOJogador2 &&
                             minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador2) { //coluna três
-                        
+                        venceu = true;
+                    } else if(minhaMatrizNoTabuleiro[0][0] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[0][1] == escolhaXouOJogador1 &&
+                            minhaMatrizNoTabuleiro[0][2]== escolhaXouOJogador1 | minhaMatrizNoTabuleiro[0][0] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[0][1] == escolhaXouOJogador2 &&
+                            minhaMatrizNoTabuleiro[0][2]== escolhaXouOJogador2){ //linha um
+                        venceu = true;
+                    } else if(minhaMatrizNoTabuleiro[1][0] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador1 &&
+                            minhaMatrizNoTabuleiro[1][2]== escolhaXouOJogador1 || minhaMatrizNoTabuleiro[1][0] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador2 &&
+                            minhaMatrizNoTabuleiro[1][2]== escolhaXouOJogador2){
+                        venceu = true;
+                    } else if (minhaMatrizNoTabuleiro[2][0] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[2][1] == escolhaXouOJogador1 &&
+                            minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador1 || minhaMatrizNoTabuleiro[2][0] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[2][1] == escolhaXouOJogador2 &&
+                            minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador2){
+                        venceu = true;
                     }
 
                     if (minhaMatrizNoTabuleiro[linha][coluna] == escolhaXouOJogador1 || minhaMatrizNoTabuleiro[linha][coluna] == escolhaXouOJogador2) {
