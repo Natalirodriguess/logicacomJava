@@ -115,11 +115,11 @@ public class Jogo {
                         venceu = true;
                     } else if(minhaMatrizNoTabuleiro[1][0] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador1 &&
                             minhaMatrizNoTabuleiro[1][2]== escolhaXouOJogador1 || minhaMatrizNoTabuleiro[1][0] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador2 &&
-                            minhaMatrizNoTabuleiro[1][2]== escolhaXouOJogador2){
+                            minhaMatrizNoTabuleiro[1][2]== escolhaXouOJogador2){ //linha dois
                         venceu = true;
                     } else if (minhaMatrizNoTabuleiro[2][0] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[2][1] == escolhaXouOJogador1 &&
                             minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador1 || minhaMatrizNoTabuleiro[2][0] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[2][1] == escolhaXouOJogador2 &&
-                            minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador2){
+                            minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador2){ //linha tres
                         venceu = true;
                     }
 
@@ -139,12 +139,22 @@ public class Jogo {
                          System.out.print("" + minhaMatrizNoTabuleiro[linha][coluna] + "   | ");
                         }
 
+                    if(minhaMatrizNoTabuleiro[0][0] == escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador1 &&
+                            minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador1 || minhaMatrizNoTabuleiro[0][0] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador2 &&
+                            minhaMatrizNoTabuleiro[2][2] == escolhaXouOJogador2){ //diagonal primária
+                        venceu = true;
+                    }else if(minhaMatrizNoTabuleiro[0][2] ==escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador1 &&
+                            minhaMatrizNoTabuleiro[2][0]== escolhaXouOJogador1 || minhaMatrizNoTabuleiro[0][2] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador2 &&
+                            minhaMatrizNoTabuleiro[2][0]== escolhaXouOJogador2){ //diagonal secundária
+                        venceu = true;
+                    }
 
 
                 }
                 System.out.println("\n                                                          -------------------");
             }
             System.out.println("                                                          ===================");
+
                if( venceu && vez%2!=0){
                    System.out.print("O jogador " + jogador1 + " venceu !");
                }else if (venceu && vez%2==0){
