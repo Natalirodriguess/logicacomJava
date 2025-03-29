@@ -31,22 +31,28 @@ public class Jogo {
     }
 
     public static void escolhaXouO(){
-        System.out.println("jogador " + jogador1 + " escolha [X] ou [O]");
-        escolhaXouOJogador1 = entradas.nextLine().toUpperCase();
+       boolean escolhaValida = false;
+        while(!escolhaValida) {
 
-        if(escolhaXouOJogador1.equalsIgnoreCase("X")) {
-            System.out.println("jogador " +jogador1 + " você ficará com [" + escolhaXouOJogador1+ "]" );
-            escolhaXouOJogador2 = "O";
-            System.out.println("jogador " + jogador2 + " você ficará com [" +escolhaXouOJogador2+"]");
-        } else if (escolhaXouOJogador1.equalsIgnoreCase("O")) {
-            System.out.println("jogador " +jogador1 + " você ficará com [" + escolhaXouOJogador1+ "]" );
-            escolhaXouOJogador2 = "X";
-            System.out.println("jogador " + jogador2 + " você ficará com [" +escolhaXouOJogador2+"]");
+            System.out.println("jogador " + jogador1 + " escolha [X] ou [O]");
+            escolhaXouOJogador1 = entradas.nextLine().toUpperCase();
+
+            if(escolhaXouOJogador1.equalsIgnoreCase("X")) {
+                System.out.println("jogador " +jogador1 + " você ficará com [" + escolhaXouOJogador1+ "]" );
+                escolhaXouOJogador2 = "O";
+                System.out.println("jogador " + jogador2 + " você ficará com [" +escolhaXouOJogador2+"]");
+                escolhaValida = true;
+            } else if (escolhaXouOJogador1.equalsIgnoreCase("O")) {
+                System.out.println("jogador " +jogador1 + " você ficará com [" + escolhaXouOJogador1+ "]" );
+                escolhaXouOJogador2 = "X";
+                System.out.println("jogador " + jogador2 + " você ficará com [" +escolhaXouOJogador2+"]");
+                escolhaValida = true;
+            }
+            else {
+                System.out.println("Opção inválida! Por favor informe uma das seguintes opções [X] ou [O]");
+            }
         }
-        else {
-            System.out.println("Opção inválida! Por favor informe uma das seguintes opções [X] ou [O]");
-            System.exit(1);
-        }
+
     }
 
 
