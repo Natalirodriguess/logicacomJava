@@ -66,7 +66,7 @@ public class Jogo {
         boolean deuvelha = false;
         int vezValida = 0;
 
-       while(!venceu) {
+       while(!venceu && !deuvelha) {
             valido = false;
             if(vez%2==0){
                 while(!valido){
