@@ -63,10 +63,10 @@ public class Jogo {
         int escolhaDaPosicaoJogador2 = 0;
         boolean valido;
         boolean venceu = false;
-        boolean deuvelha = false;
+        boolean deuVelha = false;
         int vezValida = 0;
 
-       while(!venceu && !deuvelha) {
+       while(!venceu && !deuVelha) {
             valido = false;
             if(vez%2==0){
                 while(!valido){
@@ -171,8 +171,7 @@ public class Jogo {
                    System.out.print("O jogador " + jogador2 + " venceu !");
                } else if(vezValida == 9){
                    System.out.println("Deu velha");
-                   venceu = true; //falso positivo apenas para encerrar o jogo
-                  // deuvelha = true;
+                   deuVelha = true;
                }
 
             vez++;
