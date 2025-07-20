@@ -149,6 +149,7 @@ public class Jogo {
                          System.out.print("" + minhaMatrizNoTabuleiro[linha][coluna] + "   | ");
                         }
 
+                    
                     if(minhaMatrizNoTabuleiro[0][0] == escolhaXouOJogador1  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador1 &&
                             minhaMatrizNoTabuleiro[2][2]== escolhaXouOJogador1 || minhaMatrizNoTabuleiro[0][0] == escolhaXouOJogador2  && minhaMatrizNoTabuleiro[1][1] == escolhaXouOJogador2 &&
                             minhaMatrizNoTabuleiro[2][2] == escolhaXouOJogador2){ //diagonal primária
